@@ -11,9 +11,7 @@ if len(fname) < 1:
 fh = open(fname)
 count = 0
 for line in fh:
-    if not line.startswith('From'):
-        continue
-    if line.startswith('From:'):
+    if not line.startswith('From') or line.startswith('From:'):
         continue
     line.rstrip()
     piece = line.split()
